@@ -8,6 +8,9 @@
 ### Start Server
     python manage.py runserver
 
+### Make Migrations
+     python manage.py makemigrations
+
 ### Migrate
     python manage.py migrate
 
