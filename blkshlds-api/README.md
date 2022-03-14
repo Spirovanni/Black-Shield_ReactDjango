@@ -7,3 +7,7 @@
 
 ### Start Server
     python3 manage.py runserver
+
+### Migrate
+    python manage.py migrate
+
