@@ -47,6 +47,7 @@ class CardViewSet(viewsets.ModelViewSet):
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
+    authentication_classes = (TokenAuthentication,)
 
     def update(self, request, *args, **kwargs):
         response = {'message': 'You cant update rating like that'}
