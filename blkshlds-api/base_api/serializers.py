@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
-        fields = ('id', 'title', 'description')
+        fields = ('id', 'title', 'description', 'no_of_ratings', 'avg_rating')
 
 
 class RatingSerializer(serializers.ModelSerializer):

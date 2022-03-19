@@ -18,11 +18,6 @@ class CardViewSet(viewsets.ModelViewSet):
     serializer_class = CardSerializer
 
     @action(detail=True, methods=['POST'])
-    def rate_card(self, request):
-        response = {'message': 'Its working'}
-        return Response(response, status=status.HTTP_202_ACCEPTED)
-
-    @action(detail=True, methods=['POST'])
     def rate_card(self, request, pk=None):
         if 'stars' in request.data:
 
@@ -51,3 +46,11 @@ class CardViewSet(viewsets.ModelViewSet):
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
+
+    def update(self, request, *args, **kwargs):
+        response = {'message': 'You cant update rating like that'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    def create(self, request, *args, **kwargs):
+        response = {'message': 'You cant create rating like that'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
