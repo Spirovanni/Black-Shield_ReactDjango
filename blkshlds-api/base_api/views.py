@@ -16,6 +16,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+    authentication_classes = (TokenAuthentication,)
 
     @action(detail=True, methods=['POST'])
     def rate_card(self, request, pk=None):
