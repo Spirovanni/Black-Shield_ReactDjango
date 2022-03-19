@@ -5,6 +5,10 @@
 ### Create App
     django-admin startapp base_api
 
+###Activate the virtualenv:
+
+    source py_env/bin/activate
+
 ### Start Server
     python manage.py runserver
 
