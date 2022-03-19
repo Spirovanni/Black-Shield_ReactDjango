@@ -17,6 +17,7 @@ class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
     authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
 
     @action(detail=True, methods=['POST'])
     def rate_card(self, request, pk=None):
@@ -48,6 +49,7 @@ class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
     authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
 
     def update(self, request, *args, **kwargs):
         response = {'message': 'You cant update rating like that'}
